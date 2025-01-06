@@ -1,7 +1,10 @@
+[core]
+	autocrlf = input
+	pager = cat
 [user]
-	signingkey = 24FBD3F26A2A71C3
 	name = Ozren Dabić
-	email = ozren.dabic@jetbrains.com
+	email = {{ .email | quote }}
+	signingkey ={{ .signingkey | quote }}
 [commit]
 	gpgsign = true
 [filter "lfs"]
@@ -9,6 +12,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[core]
-	autocrlf = input
-	pager = cat
