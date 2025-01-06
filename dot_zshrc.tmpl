@@ -80,7 +80,7 @@ HIST_STAMPS="%F %T"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(1password brew colored-man-pages colorize docker docker-compose git gradle gpg-agent jenv mvn npm pip pyenv pylint python themes tmux)
+plugins=(1password brew colored-man-pages colorize docker docker-compose git gradle gpg-agent jenv mvn npm pip pyenv pylint python themes tmux zsh-syntax-highlighting)
 
 # If you have installed hub using Homebrew, its completions may not be on your $FPATH if you
 # are using the system zsh.
@@ -128,6 +128,3 @@ export GPG_TTY=$(tty)
 
 # Default User
 export DEFAULT_USER=$(whoami)
-
-# Syntax Highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
