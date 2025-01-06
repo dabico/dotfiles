@@ -1,0 +1,121 @@
+# Show banner
+BANNER_PATH="$HOME/banner.txt"
+[ -f $BANNER_PATH ] && cat $BANNER_PATH
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="agnoster"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+ZSH_THEME_RANDOM_CANDIDATES=()
+
+# Use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# Hyphen-insensitive completion.
+# Case-sensitive completion must be off.
+# Underscore and dash will be interchangeable.
+HYPHEN_INSENSITIVE="false"
+
+# Change the auto-update behavior.
+# You can modify the last argument to one of:
+# - disable: no automatic updates
+# - prompt: ask for confirmation before updating
+# - auto: update automatically without asking
+# - reminder: remind user when it's time to update
+zstyle ':omz:update' mode reminder
+
+# Change how often to auto-update (in days).
+zstyle ':omz:update' frequency 30
+
+# Enable if pasting URLs and other text is messed up.
+DISABLE_MAGIC_FUNCTIONS="false"
+
+# Disable colors in ls.
+DISABLE_LS_COLORS="false"
+
+# Disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Enable command auto-correction.
+ENABLE_CORRECTION="false"
+
+# Display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}searching...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+COMPLETION_WAITING_DOTS="false"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="false"
+
+# Set the command execution timestamp shown in the history command output.
+# Accepts:
+# - "mm/dd/yyyy"
+# - "dd.mm.yyyy"
+# - "yyyy-mm-dd"
+# - Custom (see 'man strftime' for details)
+HIST_STAMPS="%Y-%m-%d %H:%M:%S"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(1password brew colored-man-pages colorize docker docker-compose git gradle gpg-agent jenv mvn npm pip pyenv pylint python themes tmux)
+
+# If you have installed hub using Homebrew, its completions may not be on your $FPATH if you
+# are using the system zsh.
+# Homebrew installs zsh completion definitions to /usr/local/share/zsh/site-functions, which
+# will be on $FPATH for the Homebrew-installed zsh, but not for the system zsh.
+# If you want it to work with the system zsh, add this to your ~/.zshrc before it sources oh-my-zsh.sh.
+if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
+  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+fi
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export MANPATH="$(manpath):/usr/local/man"
+
+# Language and locale
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+
+# GPG Settings
+export GPG_TTY=$(tty)
+
+# Default User
+export DEFAULT_USER=$(whoami)
+
+# Syntax Highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
