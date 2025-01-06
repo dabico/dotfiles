@@ -1,0 +1,14 @@
+[user]
+	signingkey = 24FBD3F26A2A71C3
+	name = Ozren Dabić
+	email = ozren.dabic@jetbrains.com
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	autocrlf = input
+	pager = cat
