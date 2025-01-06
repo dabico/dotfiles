@@ -60,7 +60,10 @@ COMPLETION_WAITING_DOTS="false"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
 
 # Commands to ignore when keeping track of history.
-HISTORY_IGNORE=([bf]g|cd|clear|exit|hisotry|ls|mount|pwd|unmount)
+HISTORY_IGNORE="([bf]g|cd|clear|exit|hisotry|ls|mount|pwd|unmount)"
+
+# Maximum number of events stored in the internal history list.
+HISTSIZE=500000
 
 # Set the command execution timestamp shown in the history command output.
 # Accepts:
