@@ -31,10 +31,10 @@ HYPHEN_INSENSITIVE="false"
 # - prompt: ask for confirmation before updating
 # - auto: update automatically without asking
 # - reminder: remind user when it's time to update
-zstyle ":omz:update" mode reminder
+zstyle ':omz:update' mode reminder
 
 # Change how often to auto-update (in days).
-zstyle ":omz:update" frequency 30
+zstyle ':omz:update' frequency 30
 
 # Enable if pasting URLs and other text is messed up.
 DISABLE_MAGIC_FUNCTIONS="false"
@@ -64,7 +64,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 # - "mm/dd/yyyy"
 # - "dd.mm.yyyy"
 # - "yyyy-mm-dd"
-# - Custom (see "man strftime" for details)
+# - Custom (see 'man strftime' for details)
 HIST_STAMPS="%Y-%m-%d %H:%M:%S"
 
 # Which plugins would you like to load?
@@ -94,13 +94,9 @@ export LC_ALL="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR="vim"
+  export EDITOR='vim'
 else
-{{ if .work -}}
-  export EDITOR="fleet --wait"
-{{ else -}}
-  export EDITOR="codium --wait -n"
-{{ end -}}
+  export EDITOR='fleet --wait'
 fi
 
 # Compilation flags
