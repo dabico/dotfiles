@@ -120,6 +120,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export NVM_DIR="$HOME/.nvm"
 export MANPATH="$(manpath):/usr/local/man"
 if [ -x "$(command -v brew)" ]; then
   export BREW_PATH=$(brew --prefix)
@@ -166,3 +167,6 @@ export DEFAULT_USER=$(whoami)
 
 source $BREW_PATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $BREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
