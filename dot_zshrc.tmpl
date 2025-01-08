@@ -96,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export MANPATH="$(manpath):/usr/local/man"
-if [ -x "$(command -v foo)" ]; then
+if [ -x "$(command -v brew)" ]; then
   export BREW_PATH=$(brew --prefix)
 fi
 
