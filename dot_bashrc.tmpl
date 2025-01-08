@@ -165,6 +165,13 @@ export ARCHFLAGS="-arch $(uname -m)"
 # users are encouraged to define aliases within the OSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# SSH Settings
+{{ if eq .chezmoi.os "darwin" -}}
+ssh-add --apple-use-keychain 2> /dev/null
+{{ else if eq .chezmoi.os "linux" -}}
+ssh-add -K 2> /dev/null
+{{ end }}
+
 # GPG Settings
 export GPG_TTY=$(tty)
 
