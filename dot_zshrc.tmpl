@@ -102,7 +102,6 @@ plugins=(
   pylint
   python
   ssh
-  ssh-agent
   themes
   tmux
 )
@@ -152,11 +151,11 @@ export ARCHFLAGS="-arch $(uname -m)"
 # For a full list of active aliases, run `alias`.
 
 # SSH Settings
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 ssh-add --apple-load-keychain 2> /dev/null
-{{ else if eq .chezmoi.os "linux" }}
+{{- else if eq .chezmoi.os "linux" -}}
 ssh-add -K 2> /dev/null
-{{ end }}
+{{- end -}}
 
 # GPG Settings
 export GPG_TTY=$(tty)
