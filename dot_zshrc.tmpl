@@ -155,7 +155,7 @@ export ARCHFLAGS="-arch $(uname -m)"
 {{ if eq .chezmoi.os "darwin" -}}
 ssh-add --apple-use-keychain 2> /dev/null
 {{ else if eq .chezmoi.os "linux" -}}
-ssh-add -K 2> /dev/null
+ssh-add -A 2> /dev/null
 {{ end }}
 
 # GPG Settings
