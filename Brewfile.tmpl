@@ -1,0 +1,109 @@
+tap 'caskroom/homebrew-cask' || true
+tap 'caskroom/versions' || true
+
+{{ if eq .chezmoi.os "darwin" -}}
+cask_args appdir: '/Applications'
+{{- else if eq .chezmoi.os "linux" }}
+cask_args appdir: '/opt'
+{{- end }}
+
+# Python
+brew 'python@3.10'
+brew 'python@3.11'
+brew 'python@3.12'
+brew 'python@3.13'
+
+# Python Tooling
+brew 'pipx'
+brew 'poetry'
+brew 'pyenv'
+
+# Java
+{{- if .work }}
+brew 'corretto@8'
+brew 'corretto@11'
+brew 'corretto@17'
+brew 'corretto@21'
+{{- else }}
+brew 'temurin@8'
+brew 'temurin@11'
+brew 'temurin@17'
+brew 'temurin@21'
+{{- end }}
+
+# Java Tooling
+brew 'gradle'
+brew 'jenv'
+brew 'maven'
+
+# JavaScript Tooling
+brew 'node'
+brew 'npm'
+
+# Languages
+brew 'go'
+brew 'kotlin'
+brew 'perl'
+
+# GPG for macOS
+brew 'gnupg' if OS.mac?
+brew 'pinentry-mac' if OS.mac?
+
+# GNU untilities for macOS
+brew 'coreutils' if OS.mac?
+brew 'gnu-sed' if OS.mac?
+
+# Git
+brew 'git'
+brew 'git-flow'
+brew 'git-lfs'
+
+# Docker
+brew 'docker'
+brew 'docker-compose'
+
+# Other Formulae
+brew 'archey4'
+brew 'bash'
+brew 'bash-completion'
+brew 'ccat'
+brew 'chezmoi'
+brew 'cloc'
+brew 'fish'
+brew 'imagemagick'
+brew 'speedtest-cli'
+brew 'tmux'
+brew 'tree'
+brew 'zsh'
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
+
+# Web Browser
+{{- if .work }}
+cask 'google-chrome'
+{{- end }}
+{{- if not .work }}
+cask 'eloston-chromium'
+{{- end }}
+
+# JetBrains IDEs
+cask 'jetbrains-space'
+cask 'intellij-idea'
+cask 'pycharm'
+cask 'webstorm'
+
+# Text Editor
+{{- if .work }}
+cask 'fleet'
+{{- else }}
+cask 'vscodium'
+{{- end }}
+
+# LaTeX for macOS
+cask 'mactex' if OS.mac?
+
+# Other Casks
+{{- if .work }}
+cask '1password-cli'
+{{- end }}
+cask 'docker'
