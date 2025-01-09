@@ -128,9 +128,9 @@ plugins=(
 # Standard plugins can be found in $OSH/plugins/
 # Custom plugins may be added to $OSH/custom/plugins/
 # Example format:
-#  if [ "$DISPLAY" ] || [ "$SSH" ]; then
-#      plugins+=(tmux-autoattach)
-#  fi
+# if [ "$DISPLAY" ] || [ "$SSH" ]; then
+#     plugins+=(tmux-autoattach)
+# fi
 
 source "$OSH"/oh-my-bash.sh
 
@@ -148,15 +148,14 @@ export LC_ALL="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR="vim"
 else
-{{ if .work }}
+  {{ if .work -}}
   export EDITOR="fleet --wait"
-{{ else }}
+  {{- else -}}
   export EDITOR="codium --wait -n"
-{{ end }}
+  {{- end }}
 fi
-
 
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
@@ -167,11 +166,11 @@ export ARCHFLAGS="-arch $(uname -m)"
 # For a full list of active aliases, run `alias`.
 
 # SSH Settings
-{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.os "darwin" }}
 ssh-add --apple-use-keychain 2> /dev/null
-{{ else if eq .chezmoi.os "linux" -}}
+{{- else if eq .chezmoi.os "linux" }}
 ssh-add -A 2> /dev/null
-{{ end }}
+{{- end }}
 
 # GPG Settings
 export GPG_TTY=$(tty)
