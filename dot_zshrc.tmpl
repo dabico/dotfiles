@@ -106,6 +106,8 @@ plugins=(
   tmux
 )
 
+PROMPT='$(kube_ps1)'$PROMPT
+
 # If you have installed hub using Homebrew, its completions may not be on your $FPATH if you
 # are using the system zsh.
 # Homebrew installs zsh completion definitions to /usr/local/share/zsh/site-functions, which
