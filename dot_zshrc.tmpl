@@ -106,8 +106,6 @@ plugins=(
   tmux
 )
 
-PROMPT='$(kube_ps1)'$PROMPT
-
 # If you have installed hub using Homebrew, its completions may not be on your $FPATH if you
 # are using the system zsh.
 # Homebrew installs zsh completion definitions to /usr/local/share/zsh/site-functions, which
@@ -161,6 +159,10 @@ export GPG_TTY=$(tty)
 
 # Default User
 export DEFAULT_USER=$(whoami)
+
+# Kubernetes Prompt
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
 
 # Auto-Suggestions Plugin
 {{- if eq .chezmoi.os "darwin" }}
