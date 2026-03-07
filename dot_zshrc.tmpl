@@ -161,8 +161,7 @@ export GPG_TTY=$(tty)
 export DEFAULT_USER=$(whoami)
 
 # Kubernetes Prompt
-source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1)'$PROMPT
+RPROMPT='$(kube_ps1)'
 
 # Auto-Suggestions Plugin
 {{- if eq .chezmoi.os "darwin" }}
