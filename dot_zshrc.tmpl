@@ -161,7 +161,7 @@ export GPG_TTY=$(tty)
 export DEFAULT_USER=$(whoami)
 
 # Kubernetes Prompt
-RPROMPT='$(kube_ps1)'
+RPS1='$(kube_ps1)'
 
 # Auto-Suggestions Plugin
 {{- if eq .chezmoi.os "darwin" }}
