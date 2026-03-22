@@ -1,5 +1,5 @@
-tap 'caskroom/homebrew-cask' || true
-tap 'caskroom/versions' || true
+tap 'homebrew/cask' || true
+tap 'homebrew/cask-versions' || true
 
 {{ if eq .chezmoi.os "darwin" -}}
 cask_args appdir: '/Applications'
@@ -23,15 +23,15 @@ brew 'uv'
 
 # Java
 {{- if .work }}
-brew 'corretto@8'
-brew 'corretto@11'
-brew 'corretto@17'
-brew 'corretto@21'
+cask 'corretto@11'
+cask 'corretto@17'
+cask 'corretto@21'
+cask 'corretto@25'
 {{- else }}
-brew 'temurin@8'
 brew 'temurin@11'
 brew 'temurin@17'
 brew 'temurin@21'
+brew 'temurin@25'
 {{- end }}
 
 # Java Tooling
@@ -75,7 +75,7 @@ brew 'docker-compose'
 brew 'docker-credential-helper'
 
 # Docker Desktop
-cask 'docker'
+cask 'docker-desktop'
 
 # Helm
 brew 'helm'
