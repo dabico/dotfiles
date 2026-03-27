@@ -153,6 +153,9 @@ else
   export EDITOR="zed --new --wait"
 fi
 
+# K9s editor
+export KUBE_EDITOR="$EDITOR"
+
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
 
