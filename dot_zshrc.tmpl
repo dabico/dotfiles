@@ -164,6 +164,9 @@ export DEFAULT_USER=$(whoami)
 # Kubernetes Prompt
 RPS1='$(kube_ps1)'
 
+# K9s Editor
+export KUBE_EDITOR="$EDITOR"
+
 # Auto-Suggestions Plugin
 {{- if eq .chezmoi.os "darwin" }}
 source $BREW_PATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
