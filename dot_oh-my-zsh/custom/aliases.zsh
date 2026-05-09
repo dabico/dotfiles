@@ -1,6 +1,6 @@
-alias cat="ccat"
-alias edit="$=EDITOR"
-alias bashconfig="$=EDITOR ~/.bashrc"
-alias zshconfig="$=EDITOR ~/.zshrc"
-alias ohmyzsh="$=EDITOR ~/.oh-my-zsh"
-alias ohmybash="$=EDITOR ~/.oh-my-bash"
+alias cat='ccat'
+alias edit='$=EDITOR'
+alias bashconfig='$=EDITOR $HOME/.bashrc'
+alias zshconfig='$=EDITOR $HOME/.zshrc'
+alias ohmyzsh='$=EDITOR $HOME/.oh-my-zsh'
+alias ohmybash='$=EDITOR $HOME/.oh-my-bash'
