@@ -1,2 +1,3 @@
-alias sed="gsed"
 alias neofetch="archey"
+alias sed="gsed"
+alias tar="gtar"
