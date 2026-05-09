@@ -1,3 +1,6 @@
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
 alias cat="ccat"
+alias edit="$=EDITOR"
+alias bashconfig="$=EDITOR ~/.bashrc"
+alias zshconfig="$=EDITOR ~/.zshrc"
+alias ohmyzsh="$=EDITOR ~/.oh-my-zsh"
+alias ohmybash="$=EDITOR ~/.oh-my-bash"
