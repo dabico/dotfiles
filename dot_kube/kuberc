@@ -1,0 +1,3 @@
+apiVersion: kubectl.config.k8s.io/v1beta1
+kind: Preference
+aliases: []
