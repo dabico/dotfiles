@@ -1,6 +1,9 @@
+edit() {
+  $=EDITOR "$@"
+}
+
 alias cat='ccat'
-alias edit='$=EDITOR'
-alias bashconfig='$=EDITOR $HOME/.bashrc'
-alias zshconfig='$=EDITOR $HOME/.zshrc'
-alias ohmyzsh='$=EDITOR $HOME/.oh-my-zsh'
-alias ohmybash='$=EDITOR $HOME/.oh-my-bash'
+alias bashconfig='edit $HOME/.bashrc'
+alias zshconfig='edit $HOME/.zshrc'
+alias ohmyzsh='edit $HOME/.oh-my-zsh'
+alias ohmybash='edit $HOME/.oh-my-bash'
